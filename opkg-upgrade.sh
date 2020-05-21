@@ -3,7 +3,7 @@
 opkg update
 LIST=$(opkg list-upgradable | cut -d" " -f1)
 NUMBER=$(echo $LIST | wc -w)
-if [ $NUMBER > 0 ]
+if [ "$NUMBER" -gt "0" ]
 then
   for PACKAGE in $LIST
   do
